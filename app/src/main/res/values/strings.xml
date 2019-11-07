@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Ej1_ChineseZodiac_APVG</string>
+    <string name="title_label">Chinese Zodiac</string>
+    <string name="button_check">Send</string>
+    <string name="hint_name">Nombre</string>
+    <string name="hint_fecha_nac">Fecha de nacimiento</string>
+    <string name="hint_no_cuenta">No. de Cuenta</string>
+    <string name="hint_correo">Correo Electrónico</string>
+</resources>
