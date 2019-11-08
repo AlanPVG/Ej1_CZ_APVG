@@ -8,10 +8,22 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+import java.util.Calendar;
+import java.util.Locale;
+import static java.util.Calendar.*;
+import java.util.Date;
+import java.time.LocalDateTime;
+
 public class MainActivity extends AppCompatActivity {
 
     EditText Nombre,Fecha_Nacimiento,No_Cuenta,Correo;
     Button btnCheck;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,7 +40,29 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if(Fecha_Nacimiento.length()!=0)
                 {
-                    Toast.makeText(MainActivity.this, "Good, good", Toast.LENGTH_SHORT).show();
+                    //Fecha actual
+                    Date date = new Date();
+                    //Formateador de fecha
+                    SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+                    //Fecha actual en string
+                    String currentDate = formatter.format(date);
+                    //Fecha de nacimiento en string
+                    String n = Fecha_Nacimiento.getText().toString();
+                    int y = 0;
+
+
+                    try{
+                        Date bDate = formatter.parse(currentDate);
+                        Date aDate = formatter.parse(n);
+                        y = getDiffYears(aDate,bDate);
+
+                       // Toast.makeText(MainActivity.this, currentDate, Toast.LENGTH_SHORT).show();
+
+                    }
+                    catch (ParseException e) {
+                    e.printStackTrace();
+                    }
+
                 }
                 else
                 {
@@ -36,7 +70,24 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+    }
 
+    private int getDiffYears(Date first, Date last){
+        Calendar a = getCalendar(first);
+        Calendar b = getCalendar(last);
+        int diff = b.get(YEAR) - a.get(YEAR);
 
+        if ((a.get(MONTH) > b.get(MONTH))||(a.get(MONTH) == b.get(MONTH) && a.get(DATE) > b.get(DATE)))
+        {
+            diff--;
+        }
+        Toast.makeText(MainActivity.this,String.valueOf(diff) , Toast.LENGTH_SHORT).show();
+        return diff;
+    }
+
+    public static Calendar getCalendar(Date date){
+        Calendar cal = Calendar.getInstance(Locale.US);
+        cal.setTime(date);
+        return cal;
     }
 }
