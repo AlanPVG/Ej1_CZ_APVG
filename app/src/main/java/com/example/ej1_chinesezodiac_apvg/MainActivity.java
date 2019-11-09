@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
+import android.content.Intent;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -66,7 +66,8 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else
                 {
-                    Toast.makeText(MainActivity.this, "Gonnad need a birth date, m8", Toast.LENGTH_SHORT).show();
+                    openActivity2();
+                    //Toast.makeText(MainActivity.this, "Gonnad need a birth date, m8", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -89,5 +90,10 @@ public class MainActivity extends AppCompatActivity {
         Calendar cal = Calendar.getInstance(Locale.US);
         cal.setTime(date);
         return cal;
+    }
+
+    public void openActivity2(){
+        Intent intent = new Intent(this, Activity2.class);
+        startActivity(intent);
     }
 }
