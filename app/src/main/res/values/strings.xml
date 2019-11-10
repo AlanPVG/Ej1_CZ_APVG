@@ -1,9 +1,24 @@
 <resources>
     <string name="app_name">Ej1_ChineseZodiac_APVG</string>
-    <string name="title_label">Chinese Zodiac</string>
-    <string name="button_check">Submit</string>
+    <string name="title_label">Zodiaco Chino</string>
+    <string name="button_check">Enviar</string>
     <string name="hint_name">Nombre</string>
     <string name="hint_fecha_nac">Fecha de nacimiento</string>
     <string name="hint_no_cuenta">No. de Cuenta</string>
     <string name="hint_correo">Correo Electrónico</string>
+    <string name="zodiacLegend"> - Año </string>
+    <string name="elZod">del</string>
+    <string name="laZod">de la</string>
+    <string name="zodiacOx">Buey</string>
+    <string name="zodiacRooster">Gallo</string>
+    <string name="zodiacRat">Rata</string>
+    <string name="zodiacRam">Cabra</string>
+    <string name="zodiacMonkey">Mono</string>
+    <string name="zodiacSnake">Serpiente</string>
+    <string name="zodiacRabbit">Conejo</string>
+    <string name="zodiacDragon">Dragón</string>
+    <string name="zodiacDog">Perro</string>
+    <string name="zodiacTiger">Tigre</string>
+    <string name="zodiacHorse">Caballo</string>
+    <string name="zodiacPig">Cerdo</string>
 </resources>

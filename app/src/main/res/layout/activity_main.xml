@@ -7,25 +7,25 @@
     android:background="@color/APVG_pink"
     tools:context=".MainActivity">
 
+    <!-- Caja de texto - Nombre -->
     <TextView
         android:id="@+id/Zodiac"
-        android:layout_width="206dp"
-        android:layout_height="wrap_content"
+        android:layout_width="176dp"
+        android:layout_height="107dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="32dp"
+        android:gravity="center"
         android:text="@string/title_label"
         android:textAllCaps="false"
         android:textColor="@android:color/background_light"
         android:textSize="40sp"
-        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.234"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.051" />
 
-    <!-- Caja de texto - Nombre -->
     <EditText
         android:id="@+id/Nombre"
         android:layout_width="200dp"
@@ -107,5 +107,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
 
+
+    <ImageView
+        android:id="@+id/fullZodiac"
+        android:layout_width="108dp"
+        android:layout_height="95dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/horoscopo"
+        app:layout_constraintBottom_toBottomOf="@id/Zodiac"
+        app:layout_constraintStart_toEndOf="@id/Zodiac"
+        app:layout_constraintTop_toTopOf="@id/Zodiac"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
