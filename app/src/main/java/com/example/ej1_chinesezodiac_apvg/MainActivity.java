@@ -20,10 +20,12 @@ import java.util.Date;
 import java.time.LocalDateTime;
 
 public class MainActivity extends AppCompatActivity {
-    public static final String EXTRA_YEARS = "com.example.ej1_chinesezodiac_apvg";
+    public static final String EXTRA_YEARS = "com.example.ej1_chinesezodiac_apvg.EXTRA_YEARS";
+    public static final String  EXTRA_REMAINDER = "com.example.ej1_chinesezodiac_apvg.EXTRA_REMAINDER";
     EditText Nombre,Fecha_Nacimiento,No_Cuenta,Correo;
     Button btnCheck;
     int diffYears = 0;
+    int remainder = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +57,8 @@ public class MainActivity extends AppCompatActivity {
                         Date bDate = formatter.parse(currentDate);
                         Date aDate = formatter.parse(n);
                         diffYears = getDiffYears(aDate,bDate);
+                        Calendar birthDate = getCalendar(aDate);
+                        remainder = birthDate.get(YEAR)%12;
                         openActivity2();
                     }
                     catch (ParseException e) {
@@ -91,8 +95,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void openActivity2(){
         String years = String.valueOf(diffYears);
+        int auxRemainder = remainder;
         Intent intent = new Intent(this, Activity2.class);
         intent.putExtra(EXTRA_YEARS,years);
+        intent.putExtra(EXTRA_REMAINDER,auxRemainder);
         startActivity(intent);
     }
 }
