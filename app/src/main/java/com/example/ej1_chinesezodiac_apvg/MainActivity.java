@@ -20,9 +20,10 @@ import java.util.Date;
 import java.time.LocalDateTime;
 
 public class MainActivity extends AppCompatActivity {
-
+    public static final String EXTRA_YEARS = "com.example.ej1_chinesezodiac_apvg";
     EditText Nombre,Fecha_Nacimiento,No_Cuenta,Correo;
     Button btnCheck;
+    int diffYears = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,15 +49,14 @@ public class MainActivity extends AppCompatActivity {
                     String currentDate = formatter.format(date);
                     //Fecha de nacimiento en string
                     String n = Fecha_Nacimiento.getText().toString();
-                    int y = 0;
 
 
                     try{
                         Date bDate = formatter.parse(currentDate);
                         Date aDate = formatter.parse(n);
-                        y = getDiffYears(aDate,bDate);
-
-                       // Toast.makeText(MainActivity.this, currentDate, Toast.LENGTH_SHORT).show();
+                        diffYears = getDiffYears(aDate,bDate);
+                        openActivity2();
+                        //Toast.makeText(MainActivity.this, String.valueOf(diffYears), Toast.LENGTH_SHORT).show();
 
                     }
                     catch (ParseException e) {
@@ -66,8 +66,8 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else
                 {
-                    openActivity2();
-                    //Toast.makeText(MainActivity.this, "Gonnad need a birth date, m8", Toast.LENGTH_SHORT).show();
+
+                    Toast.makeText(MainActivity.this, "Gonnad need a birth date, m8", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
         {
             diff--;
         }
-        Toast.makeText(MainActivity.this,String.valueOf(diff) , Toast.LENGTH_SHORT).show();
+        //Toast.makeText(MainActivity.this,String.valueOf(diff) , Toast.LENGTH_SHORT).show();
         return diff;
     }
 
@@ -93,7 +93,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void openActivity2(){
+        String years = String.valueOf(diffYears);
         Intent intent = new Intent(this, Activity2.class);
+        intent.putExtra(EXTRA_YEARS,years);
         startActivity(intent);
     }
 }

@@ -1,6 +1,7 @@
 package com.example.ej1_chinesezodiac_apvg;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -21,23 +22,25 @@ import java.time.LocalDateTime;
 public class Activity2 extends AppCompatActivity {
 
     Button btnReturn;
+    EditText Nombre,Fecha_Nacimiento,No_Cuenta,Correo;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_2);
 
+        Intent intent = getIntent();
+        String yir = intent.getStringExtra(MainActivity.EXTRA_YEARS);
         btnReturn = findViewById(R.id.btnReturn);
 
+        Toast.makeText(Activity2.this,yir , Toast.LENGTH_SHORT).show();
         btnReturn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                openActivity1();
             }
         });
-
-
-
 
     }
 
