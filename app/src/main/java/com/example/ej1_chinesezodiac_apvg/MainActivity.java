@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         btnCheck.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(Fecha_Nacimiento.length()!=0)
+                if(Fecha_Nacimiento.length()!=0 && Nombre.length()!=0 && No_Cuenta.length()!=0 && Correo.length()!=0)
                 {
                     //Fecha actual
                     Date date = new Date();
@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
                 else
                 {
 
-                    Toast.makeText(MainActivity.this, "Gonna need a birth date, m8", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, getString(R.string.toastIncompleteForm), Toast.LENGTH_SHORT).show();
                 }
             }
         });

@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Ej1_ChineseZodiac_APVG</string>
+    <string name="toastIncompleteForm"> Todos los campos deben ser llenados </string>
     <string name="title_label">Zodiaco Chino</string>
     <string name="button_check">Enviar</string>
     <string name="hint_name">Nombre</string>
