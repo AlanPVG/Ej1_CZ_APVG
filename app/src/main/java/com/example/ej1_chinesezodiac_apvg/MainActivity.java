@@ -56,8 +56,6 @@ public class MainActivity extends AppCompatActivity {
                         Date aDate = formatter.parse(n);
                         diffYears = getDiffYears(aDate,bDate);
                         openActivity2();
-                        //Toast.makeText(MainActivity.this, String.valueOf(diffYears), Toast.LENGTH_SHORT).show();
-
                     }
                     catch (ParseException e) {
                     e.printStackTrace();
@@ -67,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
                 else
                 {
 
-                    Toast.makeText(MainActivity.this, "Gonnad need a birth date, m8", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Gonna need a birth date, m8", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -82,7 +80,6 @@ public class MainActivity extends AppCompatActivity {
         {
             diff--;
         }
-        //Toast.makeText(MainActivity.this,String.valueOf(diff) , Toast.LENGTH_SHORT).show();
         return diff;
     }
 
