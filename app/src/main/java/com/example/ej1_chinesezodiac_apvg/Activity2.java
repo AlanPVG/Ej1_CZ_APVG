@@ -25,13 +25,13 @@ public class Activity2 extends AppCompatActivity {
 
         int yearOfBirth = intent.getIntExtra(MainActivity.EXTRA_YEAR_BIRTH,0);
 
-        TextView textView1 = findViewById(R.id.Age);
+        TextView textView1 = findViewById(R.id.yourAge);
 
         TextView textView2 = findViewById(R.id.zodiacIdentifier);
 
         ImageView imageZod = findViewById(R.id.zodiack);
 
-        textView1.setText(age);
+        textView1.setText(getString(R.string.yourAge)+" "+ age +" "+ getString(R.string.years));
 
         id = operaRemainder(remainder,yearOfBirth, textView2);
 

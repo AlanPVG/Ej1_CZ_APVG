@@ -21,4 +21,6 @@
     <string name="zodiacTiger">Tigre</string>
     <string name="zodiacHorse">Caballo</string>
     <string name="zodiacPig">Cerdo</string>
+    <string name="yourAge">Tu edad:</string>
+    <string name="years">años</string>
 </resources>
