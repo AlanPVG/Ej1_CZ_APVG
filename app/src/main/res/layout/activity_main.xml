@@ -28,16 +28,16 @@
 
     <EditText
         android:id="@+id/Nombre"
-        android:layout_width="200dp"
+        android:layout_width="230dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="200dp"
         android:layout_marginBottom="500dp"
-        android:background="@android:color/background_light"
         android:hint="@string/hint_name"
         android:ems="10"
         android:inputType="text"
         android:maxLength="15"
         android:textSize="25sp"
+        android:background="@drawable/edit_text_border"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -46,16 +46,16 @@
     <!-- Caja de texto - Fecha de nacimiento -->
     <EditText
         android:id="@+id/Fecha_Nacimiento"
-        android:layout_width="200dp"
+        android:layout_width="230dp"
         android:layout_height="35dp"
         android:layout_marginTop="40dp"
         android:layout_marginBottom="500dp"
-        android:background="@android:color/background_light"
         android:hint="@string/hint_fecha_nac"
         android:ems="10"
         android:inputType="date"
         android:maxLength="10"
         android:textSize="20sp"
+        android:background="@drawable/edit_text_border"
         app:layout_constraintTop_toBottomOf="@+id/Nombre"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
@@ -64,16 +64,16 @@
     <!-- Caja de texto - Número de Cuenta -->
     <EditText
         android:id="@+id/No_Cuenta"
-        android:layout_width="200dp"
+        android:layout_width="230dp"
         android:layout_height="35dp"
         android:layout_marginTop="40dp"
         android:layout_marginBottom="500dp"
-        android:background="@android:color/background_light"
         android:hint="@string/hint_no_cuenta"
         android:ems="10"
         android:inputType="number"
         android:maxLength="10"
         android:textSize="20sp"
+        android:background="@drawable/edit_text_border"
         app:layout_constraintTop_toBottomOf="@+id/Fecha_Nacimiento"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
@@ -81,16 +81,16 @@
     <!-- Caja de texto - Correo Electrónico -->
     <EditText
         android:id="@+id/Correo"
-        android:layout_width="200dp"
+        android:layout_width="230dp"
         android:layout_height="35dp"
         android:layout_marginTop="40dp"
         android:layout_marginBottom="500dp"
-        android:background="@android:color/background_light"
         android:hint="@string/hint_correo"
         android:ems="10"
         android:inputType="text"
         android:maxLength="35"
         android:textSize="20sp"
+        android:background="@drawable/edit_text_border"
         app:layout_constraintTop_toBottomOf="@+id/No_Cuenta"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
@@ -108,15 +108,17 @@
         app:layout_constraintStart_toStartOf="parent"/>
 
 
-    <ImageView
-        android:id="@+id/fullZodiac"
+    <Button
+        android:id="@+id/creditsButton"
         android:layout_width="108dp"
-        android:layout_height="95dp"
+        android:layout_height="100dp"
         android:layout_marginTop="10dp"
-        android:src="@drawable/horoscopo"
+        android:background="@drawable/horoscopo"
         app:layout_constraintBottom_toBottomOf="@id/Zodiac"
         app:layout_constraintStart_toEndOf="@id/Zodiac"
         app:layout_constraintTop_toTopOf="@id/Zodiac"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     public static final String  EXTRA_REMAINDER = "com.example.ej1_chinesezodiac_apvg.EXTRA_REMAINDER";
     public static final String  EXTRA_YEAR_BIRTH = "com.example.ej1_chinesezodiac_apvg.EXTRA_YEAR_BIRTH";
     EditText Nombre,Fecha_Nacimiento,No_Cuenta,Correo;
-    Button btnCheck;
+    Button btnCheck,btnCredits;
     int diffYears = 0;
     int remainder = 0;
     int yearOfBirth = 0;
@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         No_Cuenta = findViewById(R.id.No_Cuenta);
         Correo = findViewById(R.id.Correo);
         btnCheck = findViewById(R.id.btnCheck);
+        btnCredits = findViewById(R.id.creditsButton);
 
         btnCheck.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,6 +77,13 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+        btnCredits.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openActivity3();
+            }
+        });
     }
 
     private int getDiffYears(Date first, Date last){
@@ -104,6 +112,11 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra(EXTRA_YEARS,years);
         intent.putExtra(EXTRA_REMAINDER,auxRemainder);
         intent.putExtra(EXTRA_YEAR_BIRTH, auxYear);
+        startActivity(intent);
+    }
+
+    public void openActivity3(){
+        Intent intent = new Intent(this, Activity3_Credits.class);
         startActivity(intent);
     }
 }
