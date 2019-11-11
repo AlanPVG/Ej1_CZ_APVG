@@ -24,4 +24,7 @@
     <string name="zodiacPig">Cerdo</string>
     <string name="yourAge">Tu edad:</string>
     <string name="years">años</string>
+    <string name="mobile">Cómputo Móvil - Grupo 3</string>
+    <string name="student" translatable="false">Varela García Alan Paul</string>
+
 </resources>
