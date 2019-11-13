@@ -1,10 +1,12 @@
 <resources>
     <string name="app_name">Ej1_ChineseZodiac_APVG</string>
     <string name="toastIncompleteForm"> Todos los campos deben ser llenados </string>
+    <string name="toastIncompleteNoAccount"> El número de cuenta debe ser de 10 dígitos </string>
+    <string name="toastInvalidDateFormat"> Formato de fecha invalido </string>
     <string name="title_label">Zodiaco Chino</string>
     <string name="button_check">Enviar</string>
     <string name="hint_name">Nombre</string>
-    <string name="hint_fecha_nac">Fecha de nacimiento</string>
+    <string name="hint_fecha_nac">Fecha de nacimiento (dd/MM/aaaa)</string>
     <string name="hint_no_cuenta">No. de Cuenta</string>
     <string name="hint_correo">Correo Electrónico</string>
     <string name="zodiacLegend"> - Año </string>

@@ -11,7 +11,9 @@ import android.content.Intent;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 import java.util.Calendar;
 import java.util.Locale;
@@ -23,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
     public static final String EXTRA_YEARS = "com.example.ej1_chinesezodiac_apvg.EXTRA_YEARS";
     public static final String  EXTRA_REMAINDER = "com.example.ej1_chinesezodiac_apvg.EXTRA_REMAINDER";
     public static final String  EXTRA_YEAR_BIRTH = "com.example.ej1_chinesezodiac_apvg.EXTRA_YEAR_BIRTH";
+    String[] dateFormatsArray = {"dd/MM/yyyy","dd-MM-yyyy","dd.MM.yyyy"};
+    List<String> formatStrings = Arrays.asList(dateFormatsArray);
     EditText Nombre,Fecha_Nacimiento,No_Cuenta,Correo;
     Button btnCheck,btnCredits;
     int diffYears = 0;
@@ -46,28 +50,44 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if(Fecha_Nacimiento.length()!=0 && Nombre.length()!=0 && No_Cuenta.length()!=0 && Correo.length()!=0)
                 {
-                    //Fecha actual
-                    Date date = new Date();
-                    //Formateador de fecha
-                    SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-                    //Fecha actual en string
-                    String currentDate = formatter.format(date);
-                    //Fecha de nacimiento en string
-                    String n = Fecha_Nacimiento.getText().toString();
+
+                   if(No_Cuenta.length()==10){
+                       //Fecha actual
+                       Date date = new Date();
+                       //Formateador de fecha
+                       SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+                       //Fecha actual en string
+                       String currentDate = formatter.format(date);
+                       //Fecha de nacimiento en string
+                       String n = Fecha_Nacimiento.getText().toString();
 
 
-                    try{
-                        Date bDate = formatter.parse(currentDate);
-                        Date aDate = formatter.parse(n);
-                        diffYears = getDiffYears(aDate,bDate);
-                        Calendar birthDate = getCalendar(aDate);
-                        remainder = birthDate.get(YEAR)%12;
-                        yearOfBirth = birthDate.get(YEAR);
-                        openActivity2();
-                    }
-                    catch (ParseException e) {
-                    e.printStackTrace();
-                    }
+                       try{
+                           Date bDate = formatter.parse(currentDate);
+                           Date aDate = tryParse(n);
+                           if (aDate == null){
+                               Toast.makeText(MainActivity.this,getText(R.string.toastInvalidDateFormat), Toast.LENGTH_SHORT).show();
+                           }
+                           else {
+                               diffYears = getDiffYears(aDate, bDate);
+                               Calendar birthDate = getCalendar(aDate);
+                               remainder = birthDate.get(YEAR) % 12;
+                               yearOfBirth = birthDate.get(YEAR);
+                               openActivity2();
+                               Nombre.setText("");
+                               Fecha_Nacimiento.setText("");
+                               No_Cuenta.setText("");
+                               Correo.setText("");
+                           }
+                       }
+                       catch (ParseException e) {
+                           e.printStackTrace();
+                       }
+
+                   }
+                   else{
+                           Toast.makeText(MainActivity.this, getString(R.string.toastIncompleteNoAccount), Toast.LENGTH_SHORT).show();
+                   }
 
                 }
                 else
@@ -104,6 +124,8 @@ public class MainActivity extends AppCompatActivity {
         return cal;
     }
 
+
+
     public void openActivity2(){
         String years = String.valueOf(diffYears);
         int auxRemainder = remainder;
@@ -113,6 +135,20 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra(EXTRA_REMAINDER,auxRemainder);
         intent.putExtra(EXTRA_YEAR_BIRTH, auxYear);
         startActivity(intent);
+    }
+
+    Date tryParse(String dateString)
+    {
+        for (String formatString : formatStrings)
+        {
+            try
+            {
+                return new SimpleDateFormat(formatString).parse(dateString);
+            }
+            catch (ParseException e) {}
+        }
+
+        return null;
     }
 
     public void openActivity3(){
