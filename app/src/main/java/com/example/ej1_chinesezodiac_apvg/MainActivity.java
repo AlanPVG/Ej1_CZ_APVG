@@ -32,6 +32,11 @@ public class MainActivity extends AppCompatActivity {
     int diffYears = 0;
     int remainder = 0;
     int yearOfBirth = 0;
+    int yearOfCurrDate = 0;
+    int monthOfBirth = 0;
+    int monthOfCurrDate = 0;
+    int dayOfBirth = 0;
+    int dayOfCurrDate = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,15 +74,25 @@ public class MainActivity extends AppCompatActivity {
                                Toast.makeText(MainActivity.this,getText(R.string.toastInvalidDateFormat), Toast.LENGTH_SHORT).show();
                            }
                            else {
-                               diffYears = getDiffYears(aDate, bDate);
                                Calendar birthDate = getCalendar(aDate);
-                               remainder = birthDate.get(YEAR) % 12;
+                               Calendar currDate = getCalendar(bDate);
                                yearOfBirth = birthDate.get(YEAR);
-                               openActivity2();
-                               Nombre.setText("");
-                               Fecha_Nacimiento.setText("");
-                               No_Cuenta.setText("");
-                               Correo.setText("");
+                               yearOfCurrDate = currDate.get(YEAR);
+                               monthOfBirth = birthDate.get(Calendar.MONTH);
+                               dayOfBirth = birthDate.get(DAY_OF_MONTH);
+
+                               if (yearOfCurrDate < yearOfBirth){
+                                   Toast.makeText(MainActivity.this,"Mes invalido", Toast.LENGTH_SHORT).show();
+                               }
+                               else {
+                                   diffYears = getDiffYears(aDate, bDate);
+                                   remainder = birthDate.get(YEAR) % 12;
+                                   openActivity2();
+                                   Nombre.setText("");
+                                   Fecha_Nacimiento.setText("");
+                                   No_Cuenta.setText("");
+                                   Correo.setText("");
+                               }
                            }
                        }
                        catch (ParseException e) {
