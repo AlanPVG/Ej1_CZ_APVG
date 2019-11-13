@@ -74,15 +74,16 @@ public class MainActivity extends AppCompatActivity {
                                Toast.makeText(MainActivity.this,getText(R.string.toastInvalidDateFormat), Toast.LENGTH_SHORT).show();
                            }
                            else {
+
                                Calendar birthDate = getCalendar(aDate);
                                Calendar currDate = getCalendar(bDate);
                                yearOfBirth = birthDate.get(YEAR);
                                yearOfCurrDate = currDate.get(YEAR);
                                monthOfBirth = birthDate.get(Calendar.MONTH);
-                               dayOfBirth = birthDate.get(DAY_OF_MONTH);
+                               dayOfBirth = birthDate.get(Calendar.DAY_OF_MONTH);
 
                                if (yearOfCurrDate < yearOfBirth){
-                                   Toast.makeText(MainActivity.this,"Mes invalido", Toast.LENGTH_SHORT).show();
+                                   Toast.makeText(MainActivity.this,String.valueOf(dayOfBirth), Toast.LENGTH_SHORT).show();
                                }
                                else {
                                    diffYears = getDiffYears(aDate, bDate);
