@@ -6,7 +6,7 @@ La aplicación se presenta con tres activities:
                       Incluye validaciones para asegurar que el formulario sea llenado por completo, que el número de cuenta sea de 10 dígitos obligatoriamente y que la
                        fecha de nacimiento se encuentre en un formato válido.
                        
-                       ![GitHub Logo](/firstActivity.png)
+                       !(firstActivity.png)
                        
 * <b>Segunda Activity</b>.- Ésta activity indica el signo zodiacal chino del usuario de acuerdo a su fecha de nacimiento. Además, muestra la edad calculada de éste mismo.
 
