@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Ej1_ChineseZodiac_APVG</string>
+    <string name="toastIncompleteForm"> All fields must be filled </string>
+    <string name="toastIncompleteNoAccount"> The student account number must be 10 digits long </string>
+    <string name="toastInvalidDateFormat"> Invalid date format </string>
+    <string name="title_label">Chinese Zodiac</string>
+    <string name="button_check">Submit</string>
+    <string name="hint_name">Name</string>
+    <string name="hint_fecha_nac">Birth Date (dd/MM/yyyy)</string>
+    <string name="hint_no_cuenta">Student Account Number</string>
+    <string name="hint_correo">E-mail</string>
+    <string name="zodiacLegend"> - Year of </string>
+    <string name="elZod">the</string>
+    <string name="laZod">the</string>
+    <string name="zodiacOx">Ox</string>
+    <string name="zodiacRooster">Rooster</string>
+    <string name="zodiacRat">Rat</string>
+    <string name="zodiacRam">Ram</string>
+    <string name="zodiacMonkey">Monkey</string>
+    <string name="zodiacSnake">Snake</string>
+    <string name="zodiacRabbit">Rabbit</string>
+    <string name="zodiacDragon">Dragon</string>
+    <string name="zodiacDog">Dog</string>
+    <string name="zodiacTiger">Tiger</string>
+    <string name="zodiacHorse">Horse</string>
+    <string name="zodiacPig">Pig</string>
+    <string name="yourAge">Your age:</string>
+    <string name="years">years old</string>
+    <string name="mobile">Mobile Computing - Group: 3</string>
+
+</resources>
